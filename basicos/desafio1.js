@@ -7,6 +7,7 @@ let nivelHeroi;
 const mensagemNome = "O héroi de nome";
 const mensagemNivel = "está no nível de";
 
+// início
 // estrutura decisão para XP do héroi
 switch (true) {
   case experienciaHeroi >= 1001 && experienciaHeroi <= 2000:
@@ -34,4 +35,5 @@ switch (true) {
     nivelHeroi = "ferro";
 }
 
+// saida
 console.log(`${mensagemNome} ${nomeHeroi} ${mensagemNivel} ${nivelHeroi}`);
