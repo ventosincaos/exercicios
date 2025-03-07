@@ -1,9 +1,10 @@
-## Exercícios de Treinamento
+# Exercícios de Treinamento
 
 Este repositório contém exercícios para treinamento e prática de desenvolvimento. Atualmente, está focado em JavaScript e criação de APIs com Express.
 
-### Conteúdo
+## Conteúdo
 
+### Básicos:
 #### 1. **JavaScript**
    - Exercícios variados para praticar conceitos fundamentais de JavaScript, como loops, arrays, objetos e funções.
 
