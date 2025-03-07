@@ -1,4 +1,4 @@
-# Exercícios de Treinamento
+# Exercícios
 
 Este repositório contém exercícios para treinamento e prática de desenvolvimento.
 
