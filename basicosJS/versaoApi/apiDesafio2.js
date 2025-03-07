@@ -1,9 +1,11 @@
+// CONSTANTS API
 const express = require("express");
 const app = express();
 const port = 3002;
-
+// START
 app.use(express.json());
 
+//VARIABLES
 var level = [
   ["ferro", -Infinity, 10],
   ["bronze", 11, 20],
@@ -14,9 +16,12 @@ var level = [
   ["imortal", 101, Math.pow(10, 9)],
 ];
 
-// início
-// função de decisão de status do héroi
-function gameStatus(victory, defeat) {
+// CONSTANTS
+const MESSAGE_NAME_PREFIX = "O héroi de nome";
+const MESSAGE_LEVEL_SUFFIX = "está no nível de";
+
+// HERO LEVEL SEARCH FUNCTION
+function gameStatus(victory, defeat, heroName) {
   let result = victory - defeat;
 
   for (let i = 0; i < level.length; i++) {
@@ -25,23 +30,28 @@ function gameStatus(victory, defeat) {
     let maxLevel = level[i][2];
 
     if (result >= minLevel && result <= maxLevel) {
-      return `O herói tem de saldo de ${victory} vitórias está no nível **${levelName}**`;
+      return `${MESSAGE_NAME_PREFIX} ${heroName} tem de saldo de ${victory} vitórias ${MESSAGE_LEVEL_SUFFIX} **${levelName}**`;
     }
   }
-}
+} // END FUNCTION
 
-//fim
-app.post("/game", (req, res) => {
-  const { victory, defeat } = req.body;
+// APP POST
+app.post("/status", (req, res) => {
+  const { victory, defeat, heroName } = req.body;
 
   if (victory === undefined || defeat === undefined) {
-    return res.status(400).json({ error: "erro" });
+    return res.status(400).json({ error: "erro: vitórias e derrotas não contabilizadas" });
   }
 
-  const finalResult = gameStatus(victory, defeat);
-  res.json({ message: finalResult });
-});
+  if (heroName === undefined) {
+    return res.status(400).json({ error: "erro: nome do herói não cadastrado" });
+  }
 
+  const finalStatus = gameStatus(victory, defeat, heroName);
+  res.json({ message: finalStatus });
+}); //END APP POST
+
+// APP PORT
 app.listen(port, () => {
-  console.log(`server initialize: http://localhost:${port}/game`);
-});
+  console.log(`server initialize: http://localhost:${port}/status`);
+}); // END APP PORT

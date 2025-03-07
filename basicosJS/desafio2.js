@@ -30,6 +30,6 @@ function gameStatus(victory, defeat, heroName) {
   }
 } // END HERO LEVEL SEARCH FUNCTION 
 
-let finalResult = gameStatus(19, 5, "Helena");
-console.log(finalResult)
+let finalStatus = gameStatus(19, 5, "Helena");
+console.log(finalStatus)
 //END

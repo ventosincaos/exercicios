@@ -1,70 +1,53 @@
+// CONSTANTS API
 const express = require("express");
 const app = express();
 const port = 3001;
 
+// START
 app.use(express.json());
 
-// váriaveis
-let nivel = [
-  "ferro",
-  "bronze",
-  "prata",
-  "ouro",
-  "platina",
-  "ascendente",
-  "imortal",
-  "radiante",
+// VARIABLES
+let levelExperience = [
+  ["ferro", -Infinity, 1000],
+  ["bronze", 1001, 2000],
+  ["prata", 2001, 5000],
+  ["ouro", 5001, 7000],
+  ["platina", 7001, 8000],
+  ["ascendente", 8001, 9000],
+  ["imortal", 9001, 10000],
+  ["radiante", 10001, Math.pow(10, 9)],
 ];
-let nivelHeroi;
 
-// constantes
-const MENSAGEM_NOME = "O héroi de nome";
-const MENSAGEM_NIVEL = "está no nível de";
+// CONSTANTS MESSAGE
+const MESSAGE_NAME_PREFIX = "O héroi de nome";
+const MESSAGE_LEVEL_SUFFIX = "está no nível de";
 
-// início
-// estrutura decisão para XP do héroi
-function experiencia(nomeHeroi, experienciaHeroi) {
-  switch (true) {
-    case experienciaHeroi >= 10001:
-      nivelHeroi = nivel[7];
-      break;
-    case experienciaHeroi >= 9001:
-      nivelHeroi = nivel[6];
-      break;
-    case experienciaHeroi >= 8001:
-      nivelHeroi = nivel[5];
-      break;
-    case experienciaHeroi >= 7001:
-      nivelHeroi = nivel[4];
-      break;
-    case experienciaHeroi >= 5001:
-      nivelHeroi = nivel[3];
-      break;
-    case experienciaHeroi >= 2001:
-      nivelHeroi = nivel[2];
-      break;
-    case experienciaHeroi >= 1001:
-      nivelHeroi = nivel[1];
-      break;
-    default:
-      nivelHeroi = nivel[0];
+// HERO EXP SEARCH FUNCTION
+function gameExperience(heroName, heroExperience) {
+  for (let i = 0; i < levelExperience.length; i++) {
+    let nameLevelExperience = levelExperience[i][0];
+    let minExperience = levelExperience[i][1];
+    let maxExperience = levelExperience[i][2];
+
+    if (heroExperience >= minExperience && heroExperience <= maxExperience) {
+      return `${MESSAGE_NAME_PREFIX} ${heroName} ${MESSAGE_LEVEL_SUFFIX} ${nameLevelExperience}`;
+    }
   }
+} //END HERO EXP SEARCH FUNCTION
 
-  // saida
-  return `${MENSAGEM_NOME} ${nomeHeroi} ${MENSAGEM_NIVEL} ${nivelHeroi}`;
-}
-
+// APP POST
 app.post("/experience", (req, res) => {
-  const { nomeHeroi, experienciaHeroi } = req.body;
+  const { heroName, heroExperience } = req.body;
 
-  if (nomeHeroi === undefined || experienciaHeroi === undefined) {
+  if (heroName === undefined || heroExperience === undefined) {
     return res.status(400).json({ error: "erro" });
   }
 
-  const resultadoFinal = experiencia(nomeHeroi, experienciaHeroi);
-  res.json({ message: resultadoFinal });
-});
+  const finalExperience = gameExperience(heroName, heroExperience);
+  res.json({ message: finalExperience });
+});// END APP POST
 
+// APP PORT
 app.listen(port, () => {
   console.log(`server initialize: http://localhost:${port}/experience`);
-});
+});// END APP PORT
