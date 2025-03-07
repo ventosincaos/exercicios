@@ -1,40 +1,34 @@
-// váriaveis
-let nomeHeroi = "Júlio Cesar";
-let experienciaHeroi = 10001;
-let nivel = ["ferro", "bronze", "prata", "ouro", "platina", "ascendente", "imortal", "radiante"]
-let nivelHeroi;
+// VARIABLES
+let levelExperience = [
+  ["ferro", -Infinity, 1000],
+  ["bronze", 1001, 2000],
+  ["prata", 2001, 5000],
+  ["ouro", 5001, 7000],
+  ["platina", 7001, 8000],
+  ["ascendente", 8001, 9000],
+  ["imortal", 9001, 10000],
+  ["radiante", 10001, Math.pow(10, 9)],
+];
 
-// constantes
-const MENSAGEM_NOME = "O héroi de nome";
-const MENSAGEM_NIVEL = "está no nível de";
+// CONSTANTS
+const MESSAGE_NAME_PREFIX = "O héroi de nome";
+const MESSAGE_LEVEL_SUFFIX = "está no nível de";
 
-// início
-// estrutura decisão para XP do héroi
-switch (true) {
-    case experienciaHeroi >= 10001:
-    nivelHeroi = nivel[7];
-    break;
-    case experienciaHeroi >= 9001:
-    nivelHeroi = nivel[6];
-    break;
-  case experienciaHeroi >= 8001:
-    nivelHeroi = nivel[5];
-    break;
-    case experienciaHeroi >= 7001:
-    nivelHeroi = nivel[4];
-    break;
-    case experienciaHeroi >= 5001:
-    nivelHeroi = nivel[3];
-    break;
-    case experienciaHeroi >= 2001:
-    nivelHeroi = nivel[2];
-    break;
-  case experienciaHeroi >= 1001:
-    nivelHeroi = nivel[1];
-    break;
-  default:
-    nivelHeroi = nivel[0];
+// START
+// HERO EXP SEARCH FUNCTION 
+function gameExperience(heroName, heroExperience) {
+  for (let i = 0; i < levelExperience.length; i++) {
+    let nameLevelExperience = levelExperience[i][0];
+    let minExperience = levelExperience[i][1];
+    let maxExperience = levelExperience[i][2];
+
+    if (heroExperience >= minExperience && heroExperience <= maxExperience){
+      return `${MESSAGE_NAME_PREFIX} ${heroName} ${MESSAGE_LEVEL_SUFFIX} ${nameLevelExperience}`;
+    }
+  }
 }
+//END HERO EXP SEARCH FUNCTION
 
-// saida
-console.log(`${MENSAGEM_NOME} ${nomeHeroi} ${MENSAGEM_NIVEL} ${nivelHeroi}`);
+let finalExperience = gameExperience("helena", 1005);
+console.log(finalExperience)
+//END
