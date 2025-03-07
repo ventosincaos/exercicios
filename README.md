@@ -4,7 +4,7 @@ Este repositório contém exercícios para treinamento e prática de desenvolvim
 
 ## Conteúdo
 
-### Básicos:
+### basicosJS:
 focado em JavaScript e criação de APIs com Express.
 
 #### 1. **JavaScript**
