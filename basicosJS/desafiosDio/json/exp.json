@@ -1,0 +1,44 @@
+{
+  "levelExperience": [
+    {
+      "name": "ferro",
+      "minExperience": 0,
+      "maxExperience": 1000
+    },
+    {
+      "name": "bronze",
+      "minExperience": 1001,
+      "maxExperience": 2000
+    },
+    {
+      "name": "prata",
+      "minExperience": 2001,
+      "maxExperience": 5000
+    },
+    {
+      "name": "ouro",
+      "minExperience": 5001,
+      "maxExperience": 7000
+    },
+    {
+      "name": "platina",
+      "minExperience": 7001,
+      "maxExperience": 8000
+    },
+    {
+      "name": "ascendente",
+      "minExperience": 8001,
+      "maxExperience": 9000
+    },
+    {
+      "name": "imortal",
+      "minExperience": 9001,
+      "maxExperience": 10000
+    },
+    {
+      "name": "radiante",
+      "minExperience": 10001,
+      "maxExperience": 1000000000
+    }
+  ]
+}
