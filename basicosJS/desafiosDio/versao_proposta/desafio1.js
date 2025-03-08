@@ -11,8 +11,7 @@ function gameExperience(heroName, heroExperience) {
       return `${MESSAGE_NAME_PREFIX} ${heroName} ${MESSAGE_LEVEL_SUFFIX} ${categories.levelExperience[i].name}`;
     }
   }
-}
-//END HERO EXP SEARCH FUNCTION
+} //END HERO EXP SEARCH FUNCTION
 
 let finalExperience = gameExperience("helena", 5001);
 console.log(finalExperience)
