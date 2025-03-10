@@ -1,0 +1,39 @@
+{
+    "levelStatus": [
+        {
+            "name": "ferro",
+            "minWins": -1000000000,
+            "maxWins": 10
+        },
+        {
+            "name": "bronze",
+            "minWins": 11,
+            "maxWins": 20
+        },
+        {
+            "name": "prata",
+            "minWins": 21,
+            "maxWins": 50
+        },
+        {
+            "name": "ouro",
+            "minWins": 51,
+            "maxWins": 80
+        },
+        {
+            "name": "diamante",
+            "minWins": 81,
+            "maxWins": 90
+        },
+        {
+            "name": "lendário",
+            "minWins": 91,
+            "maxWins": 100
+        },
+        {
+            "name": "imortal",
+            "minWins": 101,
+            "maxWins": 1000000000
+        }
+    ]
+}
