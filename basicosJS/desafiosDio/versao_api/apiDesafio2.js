@@ -4,7 +4,7 @@ const app = express();
 const port = 3002;
 
 // CONSTANTS
-const allStatus = require('../json/status.json');
+const allStatus = require('../data/status.json');
 const MESSAGE_NAME_PREFIX = "O héroi de nome";
 const MESSAGE_LEVEL_SUFFIX = "está no nível de";
 

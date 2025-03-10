@@ -1,5 +1,5 @@
-const heroesData = require("../json/hero.json");
-const attackData = require("../json/attacks.json");
+const heroesData = require("../data/hero.json");
+const attackData = require("../data/attacks.json");
 
 // START
 class Hero {

@@ -1,3 +1,5 @@
+import fs from "fs";
+
 const heroesData = require("../json/hero.json");
 const attackData = require("../json/attacks.json");
 

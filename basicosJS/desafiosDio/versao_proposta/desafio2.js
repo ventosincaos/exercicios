@@ -1,6 +1,6 @@
 // CONSTANTS
 // antes status era um array e depois, foi alterado para uma matriz, agora está em .json
-const allStatus = require('../json/status.json');
+const allStatus = require('../data/status.json');
 const MESSAGE_NAME_PREFIX = "O héroi de nome";
 const MESSAGE_LEVEL_SUFFIX = "está no nível de";
 

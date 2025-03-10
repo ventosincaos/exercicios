@@ -1,6 +1,6 @@
 // CONSTANTS
 // em primeira versão, foi utilizado array, mas foi alterado para .json
-const allExperience = require('../json/exp.json');
+const allExperience = require('../data/exp.json');
 const MESSAGE_NAME_PREFIX = "O héroi de nome";
 const MESSAGE_LEVEL_SUFFIX = "está no nível de";
 
