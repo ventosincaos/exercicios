@@ -1,19 +1,12 @@
+const heroesData = require("../json/hero.json");
+const attackData = require("../json/attacks.json");
+
 class hero {
   constructor(name, age, type) {
     this.name = name;
     this.age = age;
     this.type = type;
-    this.attack = this.attackTypes(type);
-  }
-
-  attackTypes(type) {
-    const attackMethod = {
-      guerreiro: "espada",
-      mago: "magia",
-      monge: "artes marciais",
-      ninja: "shuriken",
-    };
-    return attackMethod[type];
+    this.attack = attackData[this.type];
   }
 
   messageAttack() {
@@ -21,5 +14,5 @@ class hero {
   }
 }
 
-let arthur = new hero("Arthur", 20, "guerreiro");
-arthur.messageAttack();
+const heroes = heroesData.map(heroData => new hero(heroData.name, heroData.age, heroData.type));
+heroes.forEach(hero => hero.messageAttack());

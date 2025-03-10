@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Arthur",
+    "age": 20,
+    "type": "guerreiro"
+  },
+  {
+    "name": "Lancelot",
+    "age": 25,
+    "type": "cavaleiro"
+  },
+  {
+    "name": "Merlin",
+    "age": 30,
+    "type": "mago"
+  }
+]
