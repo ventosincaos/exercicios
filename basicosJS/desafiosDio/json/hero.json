@@ -1,17 +1,28 @@
-[
-  {
-    "name": "Arthur",
-    "age": 20,
-    "type": "guerreiro"
-  },
-  {
-    "name": "Lancelot",
-    "age": 25,
-    "type": "cavaleiro"
-  },
-  {
-    "name": "Merlin",
-    "age": 30,
-    "type": "mago"
-  }
-]
+{
+    "Heroes": [
+        {
+            "name": "Helena",
+            "age": 26,
+            "type": "guerreiro",
+            "experience": 8000,
+            "victory": 470,
+            "defeat": 320
+        },
+        {
+            "name": "Atena",
+            "age": 27,
+            "type": "cavaleiro",
+            "experience": 3000,
+            "victory": 200,
+            "defeat": 110
+        },
+        {
+            "name": "Carol",
+            "age": 28,
+            "type": "mago",
+            "experience": 9020,
+            "victory": 500,
+            "defeat": 421
+        }
+    ]
+}

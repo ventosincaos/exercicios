@@ -1,7 +1,8 @@
 const heroesData = require("../json/hero.json");
 const attackData = require("../json/attacks.json");
 
-class hero {
+// START
+class Hero {
   constructor(name, age, type) {
     this.name = name;
     this.age = age;
@@ -14,5 +15,6 @@ class hero {
   }
 }
 
-const heroes = heroesData.map(heroData => new hero(heroData.name, heroData.age, heroData.type));
+const heroes = heroesData.Heroes.map(heroData => new Hero(heroData.name, heroData.age, heroData.type));
 heroes.forEach(hero => hero.messageAttack());
+//END
